@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { BG_URL } from '../utils/constant';
 import validate from '../utils/validate';
 import {
   createUserWithEmailAndPassword,
@@ -13,6 +12,7 @@ import { addUser } from '../redux/userSlice';
 import Spinner from './Loader/Spinner';
 import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa6";
+
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch()

@@ -3,11 +3,11 @@ import { FaPlay } from "react-icons/fa";
 import { AiOutlineExclamationCircle } from "react-icons/ai"
 const VideoTitle = ({title , overview }) => {
      return (
-       <div className="pt-[15%] max-w-screen bg-gradient-to-r from-black   lg:aspect-video md:aspect-video sm:aspect-video aspect-[11/7] px-10 lg:px-16 absolute">
-         <h1 className="lg:text-3xl text-xl lg:opacity-100 opacity-70 text-white font-bold pb-5">
+       <div className="lg:pt-[10%] md:pt-[10%] pt-16 max-w-screen bg-gradient-to-r from-black   lg:aspect-video md:aspect-video sm:aspect-video aspect-[11/7] px-10 lg:px-16 absolute">
+         <h1 className="lg:text-3xl text-xl lg:opacity-80 opacity-70 text-white font-bold pb-5">
            {title}
          </h1>
-         <p className="text-lg lg:w-[31%] lg:block md:block hidden w-1/2 text-white lg:pb-5">
+         <p className="text-lg lg:w-[32%]  opacity-60 lg:block md:block hidden w-1/2 text-white lg:pb-5">
            {overview}
          </p>
          <div className="flex gap-3 pt-5 items-center">
