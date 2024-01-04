@@ -8,7 +8,7 @@ import {
 import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from 'react-redux';
-import { addUser } from '../redux/userSlice';
+import { addUser } from '../redux/slices/userSlice';
 import Spinner from './Loader/Spinner';
 import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa6";

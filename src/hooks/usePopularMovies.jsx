@@ -1,10 +1,11 @@
 import axios from 'axios';
 import React, { useEffect } from 'react'
 import { options } from '../utils/constant';
-import { useDispatch } from 'react-redux';
-import { addPopularMovies, addtopRatedMovies } from '../redux/movieSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { addPopularMovies, addtopRatedMovies } from '../redux/slices/movieSlice';
 
 function usePopularMovies() {
+     const popularMovies = useSelector((state) => state.movies.popularMovies);
      const dispatch = useDispatch()
      async function getData() {
           try {
@@ -18,7 +19,7 @@ function usePopularMovies() {
           }
      }
      useEffect(() => {
-          getData();
+       !popularMovies &&   getData();
      } , [])
 }
 

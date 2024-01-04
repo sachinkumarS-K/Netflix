@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import VideoTitle from './VideoTitle';
-import VideoContainer from './VideoContainer';
+import VideoTitle from './videoContainer/VideoTitle';
+import VideoContainer from './videoContainer/VideoContainer';
 
 const MainContainer = () => {
      const movies = useSelector((state) => state.movies?.nowPlayingMovies);
@@ -9,7 +9,7 @@ const MainContainer = () => {
 
      //console.log(movies);
      
-     const mainMovie = movies[1];
+     const mainMovie = movies[2];
      //console.log(mainMovie);
      const { original_title, overview , id } = mainMovie;
   return (

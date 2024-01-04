@@ -1,5 +1,5 @@
 import React from 'react'
-import { posterPath } from '../utils/constant';
+import { posterPath } from '../../utils/constant';
 
 const MovieCard = ({ movie }) => {
   //console.log(movie)

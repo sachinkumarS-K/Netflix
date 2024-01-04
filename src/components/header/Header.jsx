@@ -1,17 +1,16 @@
 import React, { useState } from 'react'
-import { Logo, supportedLang, userpic } from '../utils/constant';
+import { Logo, supportedLang, userpic } from '../../utils/constant';
 import { useDispatch, useSelector } from 'react-redux';
 import { signOut } from "firebase/auth";
- import { auth } from '../utils/firebase';
+ import { auth } from '../../utils/firebase';
 import { useNavigate } from 'react-router-dom';
-import { toggleGptSearchView } from '../redux/gptSlice';
-import UserInfo from './UserInfo';
-import { changeLanguage, setShowUser } from '../redux/configSlice';
+import { toggleGptSearchView } from '../../redux/slices/gptSlice';
+import UserInfo from '../UserInfo';
+import { changeLanguage, setShowUser } from '../../redux/slices/configSlice';
 const Header = () => {
   const showUser = useSelector(state => state.config.showUser)
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch()
-  const navigate = useNavigate();
   function handleSignOut() {    
      signOut(auth)
        .then(() => {
@@ -66,12 +65,12 @@ const Header = () => {
             </select>
           )}
           <div
-            className="lg:w-[3rem] w-8 h-8  lg:h-[3rem]  rounded-lg overflow-hidden"
+            className="lg:w-[3rem] w-7 h-7  lg:h-[3rem]  rounded-lg overflow-hidden"
             onClick={() => dispatch(setShowUser())}
           >
             <img
               src={userpic}
-              className="bg-red-700 h-full w-full  "
+              className="bg-red-700 h-full w-full aspect-square "
               alt="userIcon"
             />
           </div>

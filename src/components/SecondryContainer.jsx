@@ -1,11 +1,11 @@
 import React from 'react'
-import MovieList from './MovieList'
+import MovieList from './movieContainer/MovieList'
 import usePopularMovies from '../hooks/usePopularMovies';
 import { useSelector } from 'react-redux';
 import useUpcomingMovies from '../hooks/useUpcomingMovies';
 import useTopRatedMovies from '../hooks/useTopRatedMovies';
 import useTendingMovies from '../hooks/useTendingMovies';
-import { addTrendingMovies } from '../redux/movieSlice';
+import { addTrendingMovies } from '../redux/slices/movieSlice';
 import useTvSeries from '../hooks/useTvSeries';
 
 const SecondryContainer = () => {

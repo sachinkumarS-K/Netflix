@@ -2,9 +2,9 @@ import { signOut } from 'firebase/auth';
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { auth } from '../utils/firebase';
-import { setGptFalse, toggleGptSearchView } from '../redux/gptSlice';
+import { setGptFalse, toggleGptSearchView } from '../redux/slices/gptSlice';
 import { IoMdArrowDropdownCircle } from "react-icons/io";
-import { setUserFalse } from '../redux/configSlice';
+import { setUserFalse } from '../redux/slices/configSlice';
 
 const UserInfo = () => {
      const showGptSearchView = useSelector((state) => state.gtp.showGptSearch);
@@ -25,7 +25,7 @@ const UserInfo = () => {
     <div className="absolute lg:top-[5rem] top-[3rem] right-2">
       {/* <IoMdArrowDropdownCircle className="text-4xl w-full  lg:pl-12 ml-10 lg:ml-5 -mt-4 text-gray-300  lg:text-white" /> */}
       <div
-        className="float-end -mt-[4px] pr-1 mr-3"
+        className="float-end -mt-[8px] lg:-mt-[5px] pr-1 mr-2 lg:mr-3"
         style={{
           width: "0",
           height: "0",
@@ -35,24 +35,18 @@ const UserInfo = () => {
         }}
       ></div>
 
-      <div className="bg-gray-300 w-full rounded-lg lg:px-6 lg:pl-2  lg:py-2 py-1 -mt-3 flex flex-col justify-between gap-1">
-        <p className="lg:text-xl text-lg font-normal tracking-wide">
-          Hello {user.displayName}{" "}
+      <div className="bg-gray-300 w-full justify-center items-center rounded-lg lg:px-6 lg:pl-2  lg:py-2 py-1 -mt-3 flex flex-col  gap-1">
+        <p className="lg:text-xl text-sm font-normal tracking-wide">
+          Hello ! {user.displayName}{" "}
         </p>
 
-        <div className="w-full bg-black  h-[1px]"></div>
+        <div className="w-[93%] px-5  bg-cyan-600 h-[1.3px]"></div>
         <p
           onClick={handleSignOut}
           className="lg:text-lg  font-bold tracking-wider cursor-pointer text-red-400"
         >
           Sign Out
         </p>
-        {/* <button
-         
-          className="lg:px-5 px-2 lg:text-lg text-sm py-1 bg-red-400 text-white rounded-md flex-1"
-        >
-          Sign Out
-        </button> */}
       </div>
     </div>
   );

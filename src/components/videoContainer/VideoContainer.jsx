@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react'
 import {useSelector } from 'react-redux';
-import useMovieTrailer from '../hooks/useMovieTrailer';
+import useMovieTrailer from '../../hooks/useMovieTrailer';
 
 const VideoContainer = ({ movieId }) => {
    const trailer = useSelector((state) => state.movies?.trailerVideo);

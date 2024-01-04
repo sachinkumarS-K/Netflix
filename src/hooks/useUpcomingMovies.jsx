@@ -1,10 +1,11 @@
 import axios from 'axios'
 import React, { useEffect } from 'react'
 import { options } from '../utils/constant'
-import { addUpcomingMovies, addtopRatedMovies } from '../redux/movieSlice';
-import { useDispatch } from 'react-redux';
+import { addUpcomingMovies, addtopRatedMovies } from '../redux/slices/movieSlice';
+import { useDispatch, useSelector } from 'react-redux';
 
 const useUpcomingMovies = () => {
+  const upcomingMovies = useSelector((state) => state.movies.upcoming);
 const dispatch = useDispatch()
      async function getData() {
           try {
@@ -19,7 +20,7 @@ const dispatch = useDispatch()
      }
 
      useEffect(() => {
-         getData()
+      !upcomingMovies &&   getData()
      },[])
   return (
     <div>

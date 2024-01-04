@@ -1,9 +1,12 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { options } from "../utils/constant";
-import { addNowPlayingMovies } from "../redux/movieSlice";
+import { addNowPlayingMovies } from "../redux/slices/movieSlice";
 import { useEffect } from "react";
 const useNowPlayingMovie = () => {
+  const nowPlayingMovies = useSelector(
+    (state) => state.movies.nowPlayingMovies
+  );
       const dispatch = useDispatch();
      async function fetchData() {
        try {
@@ -11,14 +14,13 @@ const useNowPlayingMovie = () => {
            "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1",
            options
          );
-         //console.log(res.data);
          res && dispatch(addNowPlayingMovies(res.data.results));
        } catch (error) {
          console.log(error);
        }
      }
      useEffect(() => {
-          fetchData()
+        !nowPlayingMovies &&  fetchData()
      } , [])
   return (
     <div>
